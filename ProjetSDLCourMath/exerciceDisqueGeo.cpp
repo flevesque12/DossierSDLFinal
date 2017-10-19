@@ -99,8 +99,8 @@ public:
 	void TracerCercle(SDL_Renderer *renderer, Point pFlottant) {
 		SDL_SetRenderDrawColor(renderer, 0, 255, 155, 123);
 
-		Point rayon;
-		Point pDroite;
+		Point rayon(0,0);
+		Point pDroite(0,0);
 
 		//afficher le centre et un point
 		Point centre(WIDTH / 2, HEIGHT / 2);
@@ -112,11 +112,11 @@ public:
 		Point p2(WIDTH / 2 - 245, HEIGHT / 2);
 		p2.afficher(renderer, 0, 255, 255, 15);
 
-		rayon.x = p.x - centre.x;
-		rayon.y = p.y - centre.y;
+		rayon.x = centre.x - p.x;
+		rayon.y = centre.y - p.y;
 
-		pDroite.x = pFlottant.x - centre.x;
-		pDroite.y = pFlottant.y - centre.y;
+		pDroite.x = centre.x - pFlottant.x;
+		pDroite.y = centre.y - pFlottant.y;
 
 
 		//affichage du cercle
@@ -129,21 +129,56 @@ public:
 		//fait le tour du cercle
 		while (alpha <2 * PI)
 		{		
-				x = WIDTH / 2 + 245 * cos(alpha);
-				y = HEIGHT / 2 -245 * sin(alpha);
+			x = WIDTH / 2 + 245 * cos(alpha);
+			y = HEIGHT / 2 - 245 * sin(alpha);
 
-				SDL_RenderDrawPoint(renderer, x, y);
-			
-			
+			SDL_RenderDrawPoint(renderer, x, y);
 			
 			alpha += pasAlpha;
-			
 		}
 
-		if (sqrt(pDroite.x + pDroite.y) <= sqrt(rayon.x + rayon.y)) {
+		double expXY = pow(pDroite.x + pDroite.y,2);
+		double rayon2 = pow(rayon.x + rayon.y,2);
+
+		if (expXY >= rayon2) {
 			pFlottant.afficher(renderer, 255, 0, 255, 20);
 		}
 
+		//cout << rayon.x << "::" << rayon.y << endl;
+		cout << expXY << "::" << rayon2 << endl;
+
+	}
+
+	void tracerCercleGeo(SDL_Renderer *renderer, int r, int g, int b, Point centre, Point pt ) {
+		SDL_SetRenderDrawColor(renderer, (Uint8)r, (Uint8)g, (Uint8)b, (Uint8)SDL_ALPHA_OPAQUE);
+		Point rayon(0, 0);
+		Point pDroite(0, 0);
+
+		//afficher le centre et un point
+		Point p(WIDTH / 2 + pt.x, HEIGHT / 2 + pt.y);
+		p.afficher(renderer, 0, 255, 255, 15);
+		centre.afficher(renderer, 0, 0, 255, 10);
+		
+		rayon.x = centre.x - pt.x;
+		rayon.y = centre.y - pt.y;
+		
+		//affichage du cercle
+		double alpha = 0;
+		double pasAlpha = 2 * PI / 10;
+
+		double x;
+		double y;
+
+		//fait le tour du cercle
+		while (alpha <2 * PI)
+		{
+			x = centre.x + pt.x * cos(alpha);
+			y = centre.y - pt.y * sin(alpha);
+
+			SDL_RenderDrawPoint(renderer, x, y);
+
+			alpha += pasAlpha;
+		}		
 	}
 };
 
@@ -198,6 +233,8 @@ int main(int argc, char** argv) {
 	//point qui bouge
 	Point p(WIDTH / 2, HEIGHT / 2);
 	
+	Point pCentre(200, 200);
+	Point point(300, 300);
 
 	bool fin = false;
 	while (!fin) {
@@ -207,7 +244,7 @@ int main(int argc, char** argv) {
 		//pD.afficher(renderer, 255, 255, 255, 20);
 		p.afficher(renderer, 0, 255, 0, 20);
 		
-		nuage.TracerCercle(renderer,p);
+		nuage.tracerCercleGeo(renderer, 255, 0, 0, pCentre, point);
 
 		SDL_Rect textureRect;	
 
