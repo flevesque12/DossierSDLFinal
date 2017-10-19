@@ -134,15 +134,8 @@ public:
 
 				SDL_RenderDrawPoint(renderer, x, y);
 			
-			/*
-			x = WIDTH / 2 + 250 * cos(alpha);
-			y = HEIGHT / 2 - 250 *sin(alpha);
-			SDL_RenderDrawPoint(renderer, (int)x, (int)y);
-
-			x = WIDTH / 2 + 249 * cos(alpha);
-			y = HEIGHT / 2 - 249 * sin(alpha);
-			SDL_RenderDrawPoint(renderer, (int)x, (int)y);
-			*/
+			
+			
 			alpha += pasAlpha;
 			
 		}
@@ -179,6 +172,7 @@ TypeEvenement lireEvenement(int &x, int &y, int &touche) {
 
 	return evt;
 }
+
 
 int main(int argc, char** argv) {
 #pragma region initialisation SDL

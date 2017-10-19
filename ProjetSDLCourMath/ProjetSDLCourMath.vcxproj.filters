@@ -42,6 +42,9 @@
     <ClCompile Include="prodVectScal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="testMaincpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dot.h">
