@@ -128,6 +128,7 @@
     <ClCompile Include="Dot.cpp" />
     <ClCompile Include="exerciceDisqueGeo.cpp" />
     <ClCompile Include="ExercicePoint.cpp" />
+    <ClCompile Include="exPolygone.cpp" />
     <ClCompile Include="HelloWMain.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NuagePoint.cpp" />
