@@ -5,6 +5,7 @@ using namespace std;
 #include <conio.h>
 #include <time.h>
 #include <ctime>
+#include <cmath>
 
 #define WIDTH 800
 #define HEIGHT 800
@@ -155,7 +156,7 @@ public:
 		Point pDroite(0, 0);
 
 		//afficher le centre et un point
-		Point p(WIDTH / 2 + pt.x, HEIGHT / 2 + pt.y);
+		Point p(WIDTH / 2 + pt.x, HEIGHT / 2 - pt.y);
 		p.afficher(renderer, 0, 255, 255, 15);
 		centre.afficher(renderer, 0, 0, 255, 10);
 		
@@ -209,7 +210,8 @@ TypeEvenement lireEvenement(int &x, int &y, int &touche) {
 }
 
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv) 
+{
 #pragma region initialisation SDL
 	//	initialisation SDL
 	SDL_Window* fenetre = NULL;
