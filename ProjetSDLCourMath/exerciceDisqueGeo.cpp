@@ -146,7 +146,7 @@ public:
 		}
 
 		//cout << rayon.x << "::" << rayon.y << endl;
-		cout << expXY << "::" << rayon2 << endl;
+		//cout << expXY << "::" << rayon2 << endl;
 
 	}
 
@@ -165,17 +165,19 @@ public:
 		
 		//affichage du cercle
 		double alpha = 0;
-		double pasAlpha = 2 * PI / 10;
+		double pasAlpha = 2 * PI / 100;
 
 		double x;
 		double y;
+
+		//double x2;
+		//double y2;
 
 		//fait le tour du cercle
 		while (alpha <2 * PI)
 		{
 			x = centre.x + pt.x * cos(alpha);
 			y = centre.y - pt.y * sin(alpha);
-
 			SDL_RenderDrawPoint(renderer, x, y);
 
 			alpha += pasAlpha;
@@ -235,8 +237,12 @@ int main(int argc, char** argv)
 	//point qui bouge
 	Point p(WIDTH / 2, HEIGHT / 2);
 	
-	Point pCentre(200, 200);
+	Point pCentre(400, 400);
+	Point pCentre2(300, 500);
+
+
 	Point point(300, 300);
+	Point point2(50, 50);
 
 	bool fin = false;
 	while (!fin) {
@@ -247,6 +253,8 @@ int main(int argc, char** argv)
 		p.afficher(renderer, 0, 255, 0, 20);
 		
 		nuage.tracerCercleGeo(renderer, 255, 0, 0, pCentre, point);
+		nuage.tracerCercleGeo(renderer, 255, 255, 0, pCentre2, point2);
+
 
 		SDL_Rect textureRect;	
 
