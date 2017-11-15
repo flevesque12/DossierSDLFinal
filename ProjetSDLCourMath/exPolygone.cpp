@@ -9,7 +9,7 @@ using namespace std;
 #define WIDTH 800
 #define HEIGHT 800
 #define PI 3.141592653589793
-
+/*
 class Point {
 public:
 	double x, y;
@@ -266,6 +266,7 @@ int main(int argc, char** argv) {
 
 	return 0;
 }
+*/
 
 
 

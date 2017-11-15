@@ -48,6 +48,15 @@
     <ClCompile Include="exPolygone.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ExPerceptionApprentissage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Donnee.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnsembleDonnee.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dot.h">
@@ -57,6 +66,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Donnee.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnsembleDonne.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

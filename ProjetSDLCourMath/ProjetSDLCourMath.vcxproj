@@ -125,9 +125,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Donnee.cpp" />
     <ClCompile Include="Dot.cpp" />
+    <ClCompile Include="EnsembleDonnee.cpp" />
     <ClCompile Include="exerciceDisqueGeo.cpp" />
     <ClCompile Include="ExercicePoint.cpp" />
+    <ClCompile Include="ExPerceptionApprentissage.cpp" />
     <ClCompile Include="exPolygone.cpp" />
     <ClCompile Include="HelloWMain.cpp" />
     <ClCompile Include="main.cpp" />
@@ -138,7 +141,9 @@
     <ClCompile Include="testMaincpp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Donnee.h" />
     <ClInclude Include="Dot.h" />
+    <ClInclude Include="EnsembleDonne.h" />
     <ClInclude Include="NuagePoint.h" />
     <ClInclude Include="Point.h" />
   </ItemGroup>
