@@ -4,9 +4,9 @@
 class Donnee {
 
 public:
-	
-	double donnee1;
-	double donnee2;
+	double classification;
+	double w1;
+	double w2;
 	Donnee();
-	Donnee(double donnee1, double donnee2);
+	Donnee(double classification,double w1, double w2);
 };
